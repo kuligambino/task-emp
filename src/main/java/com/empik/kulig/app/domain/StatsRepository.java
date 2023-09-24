@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 @Slf4j
-class StatsRepository {
+public class StatsRepository {
 
     private static final int STARTING_VALUE = 1;
 
     private final JdbcTemplate jdbcTemplate;
 
-    void incrementRequestCount(String login) {
+     synchronized void incrementRequestCount(String login) {
         try {
             int currentCount = jdbcTemplate.queryForObject("SELECT request_count FROM api_request_stats WHERE login = ?", Integer.class, login);
             log.info("Updating request_count for user: [{}] from {} to {}.", login, currentCount, currentCount+1);

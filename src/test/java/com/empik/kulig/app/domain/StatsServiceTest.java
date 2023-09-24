@@ -18,7 +18,7 @@ import reactor.test.StepVerifier;
 
 import java.io.IOException;
 
-import static com.empik.kulig.app.domain.UserStatsAssert.assertThatStats;
+import static com.empik.kulig.app.UserStatsAssert.assertThatStats;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

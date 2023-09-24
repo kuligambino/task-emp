@@ -14,6 +14,6 @@ class ApiExceptionHandler {
     @ExceptionHandler(UserNotExistException.class)
     public ResponseEntity<ApiExceptionResponse> handleNotFound(UserNotExistException ex) {
         log.error(ex.getMessage());
-        return ResponseEntity.ofNullable(new ApiExceptionResponse(NOT_FOUND, ex.getMessage()));
+        return ResponseEntity.status(NOT_FOUND).body(new ApiExceptionResponse(NOT_FOUND, ex.getMessage()));
     }
 }
