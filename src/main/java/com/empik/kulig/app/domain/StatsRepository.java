@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 @Slf4j
-public class StatsRepository {
+class StatsRepository {
 
     private static final int STARTING_VALUE = 1;
 

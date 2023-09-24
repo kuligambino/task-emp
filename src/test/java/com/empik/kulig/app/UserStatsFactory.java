@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 import static java.time.LocalDateTime.parse;
 
-public class UserStatsFactory {
+class UserStatsFactory {
 
     static UserStatsDto userStats(String login, int followers, int publicRepos) {
         return new UserStatsDto(583231, login, "The Octocat", "User",
